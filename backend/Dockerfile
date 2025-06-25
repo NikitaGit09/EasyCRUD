@@ -8,8 +8,9 @@ COPY ./ /opt/
 WORKDIR /opt
 
 # Optional: Replace application.properties if needed
-# RUN rm -rf src/main/resources/application.properties
-# COPY application.properties backend/src/main/resources/application.properties
+
+ RUN rm -rf src/main/resources/application.properties
+ RUN cp -f application.properties src/main/resources/application.properties
 
 # Build the project and skip tests
 RUN mvn clean package -DskipTests
