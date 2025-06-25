@@ -1,4 +1,4 @@
-FROM maven:3.8.8-openjdk-17
+FROM maven:3.8.3-openjdk-17
 
 COPY ./ opt/
 
@@ -9,6 +9,8 @@ COPY application.properties backend/src/main/resources/application.properties
 RUN mvn clean package 
 
 WORKDIR /opt/target
+
+EXPOSE 8080
 
 ENTRYPOINT [ "java", "-jar" ]
 
