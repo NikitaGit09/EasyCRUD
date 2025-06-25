@@ -6,8 +6,8 @@ WORKDIR /opt
 
 RUN npm install && npm run build
 
-RUN apk update && apk add apache2 -y
+RUN apk update && apk add apache2
 
 EXPOSE 80
 
-ENTRYPOINT [ "apachectl1", "-D", "FOREGROUND" ]
+CMD [ "apachectl", "-D", "FOREGROUND" ]
