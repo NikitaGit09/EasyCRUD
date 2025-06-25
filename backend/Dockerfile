@@ -1,0 +1,15 @@
+FROM maven:3.8.8-openjdk-17
+
+COPY ./ opt/
+
+WORKDIR /opt
+
+COPY application.properties backend/src/main/resources/application.properties
+
+RUN mvn clean package 
+
+WORKDIR /opt/target
+
+ENTRYPOINT [ "java", "-jar" ]
+
+CMD [ "student-registration-backend.0.0.1-SNAPSHOT.jar" ]
