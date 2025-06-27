@@ -9,8 +9,8 @@ WORKDIR /opt
 
 # Optional: Replace application.properties if needed
 
- RUN rm -rf src/main/resources/application.properties \
-     cp -f application.properties src/main/resources/application.properties \
+ RUN rm -rf src/main/resources/application.properties && \
+     cp -f application.properties src/main/resources/application.properties && \
      mvn clean package -DskipTests
 
 # Build the project and skip tests
