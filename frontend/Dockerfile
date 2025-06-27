@@ -5,7 +5,7 @@ COPY . /opt/
 WORKDIR /opt
 
 RUN npm install && npm run build && \ 
-    apk update && apk add apache2
+    apk update && apk add apache2 && \
     rm -rf /var/www/localhost/htdocs/* && \
     cp -rf dist/* /var/www/localhost/htdocs/
 
