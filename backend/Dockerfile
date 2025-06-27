@@ -9,11 +9,12 @@ WORKDIR /opt
 
 # Optional: Replace application.properties if needed
 
- RUN rm -rf src/main/resources/application.properties
- RUN cp -f application.properties src/main/resources/application.properties
+ RUN rm -rf src/main/resources/application.properties \
+     cp -f application.properties src/main/resources/application.properties \
+     mvn clean package -DskipTests
 
 # Build the project and skip tests
-RUN mvn clean package -DskipTests
+#RUN mvn clean package -DskipTests
 
 # Set working directory to the build output folder
 WORKDIR /opt/target
