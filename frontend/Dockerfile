@@ -6,8 +6,7 @@ WORKDIR /opt
 
 RUN npm install && npm run build && \ 
     apk update && apk add apache2
-
-RUN rm -rf /var/www/localhost/htdocs/* && \
+    rm -rf /var/www/localhost/htdocs/* && \
     cp -rf dist/* /var/www/localhost/htdocs/
 
     #dist/index.html /var/www/localhost/htdocs/index.html
