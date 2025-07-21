@@ -14,7 +14,7 @@ spec:
     driver: ebs.csi.aws.com
     volumeHandle: vol-070c2ed4c5a1a737d
     fsType: ext4
-    volumeattributes:
+    volumeAttributes:
       storage.kubernetes.io/csiProvisionerIdentity: static 
   nodeAffinity:
     required:
@@ -23,7 +23,7 @@ spec:
         - key: kubernetes.io/hostname
           operator: In
           values:
-          - "us-east-1a"
+          - us-east-1a
 
 ---
 apiVersion: v1
